@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+html {
+  min-height: 100%;
+  background-color: #020617;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: radial-gradient(
+      120% 120% at 50% 0%,
+      rgba(37, 99, 235, 0.18),
+      rgba(15, 23, 42, 0.95) 60%
+    ),
+    #020617;
+  color: #e2e8f0;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+html[data-theme="light"] {
+  background-color: #f8fafc;
+}
+
+html[data-theme="light"] body {
+  background: radial-gradient(
+      140% 140% at 50% -10%,
+      rgba(14, 165, 233, 0.18),
+      rgba(255, 255, 255, 0.95) 65%
+    ),
+    #f1f5f9;
+  color: #0f172a;
+}
+
+* {
+  scroll-margin-top: 5.5rem;
+}
+
+html[data-theme="light"] .bg-slate-950\/70,
+html[data-theme="light"] .bg-slate-950\/80,
+html[data-theme="light"] .bg-slate-950\/90,
+html[data-theme="light"] .bg-slate-950\/95,
+html[data-theme="light"] .bg-slate-950 {
+  background-color: rgba(248, 250, 252, 0.92) !important;
+}
+
+html[data-theme="light"] .bg-slate-900\/60,
+html[data-theme="light"] .bg-slate-900\/70,
+html[data-theme="light"] .bg-slate-900\/80,
+html[data-theme="light"] .bg-slate-900\/95,
+html[data-theme="light"] .bg-slate-900 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+}
+
+html[data-theme="light"] .bg-white\/5,
+html[data-theme="light"] .bg-white\/10,
+html[data-theme="light"] .bg-white\/15 {
+  background-color: rgba(226, 232, 240, 0.6) !important;
+}
+
+html[data-theme="light"] .bg-blue-500\/15 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+html[data-theme="light"] .text-white,
+html[data-theme="light"] .text-slate-100,
+html[data-theme="light"] .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .text-blue-200 {
+  color: #2563eb !important;
+}
+
+html[data-theme="light"] .text-rose-100 {
+  color: #be123c !important;
+}
+
+html[data-theme="light"] .text-slate-300,
+html[data-theme="light"] .text-slate-400,
+html[data-theme="light"] .text-slate-500 {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .border-white\/10,
+html[data-theme="light"] .border-white\/20,
+html[data-theme="light"] .border-white\/40 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] .border-slate-200\/60,
+html[data-theme="light"] .border-slate-200\/70 {
+  border-color: rgba(148, 163, 184, 0.7) !important;
+}
+
+html[data-theme="light"] .text-red-200,
+html[data-theme="light"] .text-red-300,
+html[data-theme="light"] .text-red-500 {
+  color: #b91c1c !important;
+}
+
+html[data-theme="light"] .bg-red-50 {
+  background-color: rgba(248, 113, 113, 0.12) !important;
+}
+
+html[data-theme="light"] .shadow-blue-500\/20,
+html[data-theme="light"] .shadow-blue-500\/40 {
+  box-shadow: 0 15px 35px rgba(30, 64, 175, 0.15) !important;
+}
+
+html[data-theme="light"] .divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme="light"] .ring-white\/10 {
+  --tw-ring-color: rgba(15, 23, 42, 0.1) !important;
+}
