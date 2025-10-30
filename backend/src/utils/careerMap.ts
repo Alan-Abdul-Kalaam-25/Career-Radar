@@ -6,7 +6,7 @@ export const careerMap: Record<string, string[]> = {
     "performance",
     "accessibility",
     "design-systems",
-    "testing"
+    "testing",
   ],
   "Backend Developer": [
     "backend",
@@ -15,7 +15,7 @@ export const careerMap: Record<string, string[]> = {
     "distributed-systems",
     "observability",
     "security",
-    "scalability"
+    "scalability",
   ],
   "Full Stack Developer": [
     "frontend",
@@ -24,14 +24,14 @@ export const careerMap: Record<string, string[]> = {
     "product-thinking",
     "apis",
     "design-systems",
-    "testing"
+    "testing",
   ],
   "Software Engineer": [
     "coding",
     "problem-solving",
     "algorithms",
     "web",
-    "mentorship"
+    "mentorship",
   ],
   "Data Scientist": [
     "data-science",
@@ -39,7 +39,7 @@ export const careerMap: Record<string, string[]> = {
     "machine-learning",
     "python",
     "analytics",
-    "storytelling"
+    "storytelling",
   ],
   "Machine Learning Engineer": [
     "ml-engineering",
@@ -47,7 +47,7 @@ export const careerMap: Record<string, string[]> = {
     "ml-ops",
     "automation",
     "pipelines",
-    "cloud"
+    "cloud",
   ],
   "Data Engineer": [
     "data-engineering",
@@ -55,7 +55,7 @@ export const careerMap: Record<string, string[]> = {
     "governance",
     "cloud",
     "automation",
-    "observability"
+    "observability",
   ],
   "Product Manager": [
     "product",
@@ -63,7 +63,7 @@ export const careerMap: Record<string, string[]> = {
     "stakeholder",
     "roadmap",
     "communication",
-    "analysis"
+    "analysis",
   ],
   "UI/UX Designer": [
     "design",
@@ -71,7 +71,7 @@ export const careerMap: Record<string, string[]> = {
     "interaction",
     "creativity",
     "design-systems",
-    "storytelling"
+    "storytelling",
   ],
   "DevOps Engineer": [
     "devops",
@@ -79,7 +79,7 @@ export const careerMap: Record<string, string[]> = {
     "ci-cd",
     "observability",
     "infrastructure",
-    "security"
+    "security",
   ],
   "Cloud Engineer": [
     "cloud",
@@ -87,7 +87,7 @@ export const careerMap: Record<string, string[]> = {
     "automation",
     "cost-optimization",
     "security",
-    "networking"
+    "networking",
   ],
   "Cybersecurity Analyst": [
     "security",
@@ -95,7 +95,7 @@ export const careerMap: Record<string, string[]> = {
     "incident-response",
     "risk",
     "monitoring",
-    "governance"
+    "governance",
   ],
   "Technical Program Manager": [
     "tpm",
@@ -103,7 +103,7 @@ export const careerMap: Record<string, string[]> = {
     "stakeholder",
     "risk-management",
     "communication",
-    "strategy"
+    "strategy",
   ],
   "Marketing Specialist": ["marketing", "content", "seo", "analytics"],
   "Web Developer": [
@@ -112,22 +112,22 @@ export const careerMap: Record<string, string[]> = {
     "javascript",
     "http",
     "debugging",
-    "component-based"
+    "component-based",
   ],
-  "Doctor": [
+  Doctor: [
     "medical-diagnosis",
     "clinical-skills",
     "patient-care",
     "medical-ethics",
-    "patient-advocacy"
+    "patient-advocacy",
   ],
-  "Lawyer": [
+  Lawyer: [
     "legal-reasoning",
     "case-law",
     "contracts",
     "court-procedure",
     "legal-ethics",
-    "negotiation"
+    "negotiation",
   ],
   "Police Officer": [
     "law-enforcement",
@@ -135,30 +135,30 @@ export const careerMap: Record<string, string[]> = {
     "situational-awareness",
     "investigation",
     "criminal-law",
-    "mentorship"
+    "mentorship",
   ],
-  "Teacher": [
+  Teacher: [
     "education",
     "instructional-design",
     "assessment",
     "lesson-planning",
     "student-engagement",
-    "classroom-management"
+    "classroom-management",
   ],
-  "Nurse": [
+  Nurse: [
     "nursing",
     "patient-safety",
     "patient-care",
     "infection-control",
     "patient-advocacy",
-    "patient-education"
+    "patient-education",
   ],
-  "Psychologist": [
+  Psychologist: [
     "psychology",
     "therapy",
     "assessment",
     "ethics",
-    "treatment-planning"
+    "treatment-planning",
   ],
   "Civil Engineer": [
     "civil-engineering",
@@ -166,7 +166,7 @@ export const careerMap: Record<string, string[]> = {
     "structural-analysis",
     "construction-management",
     "water-resources",
-    "safety"
+    "safety",
   ],
   "Mechanical Engineer": [
     "mechanical-engineering",
@@ -174,7 +174,7 @@ export const careerMap: Record<string, string[]> = {
     "mechanics",
     "vibrations",
     "manufacturing",
-    "energy-systems"
+    "energy-systems",
   ],
   "Financial Analyst": [
     "finance",
@@ -182,16 +182,16 @@ export const careerMap: Record<string, string[]> = {
     "liquidity",
     "portfolio-management",
     "financial-reporting",
-    "forecasting"
+    "forecasting",
   ],
-  "Politician": [
+  Politician: [
     "public-policy",
     "campaign",
     "civics",
     "negotiation",
     "public-service",
-    "governance"
-  ]
+    "governance",
+  ],
 };
 
 export default careerMap;

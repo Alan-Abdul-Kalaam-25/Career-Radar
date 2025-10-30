@@ -90,7 +90,7 @@ export const keywords: Record<string, string[]> = {
   coaching: ["mentorship", "leadership"],
   facilitation: ["communication", "stakeholder"],
   innovation: ["creativity", "strategy"],
-  vision: ["strategy", "communication"]
+  vision: ["strategy", "communication"],
 };
 
 export default keywords;
