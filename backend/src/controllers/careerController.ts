@@ -1,17 +1,11 @@
 import { Response } from "express";
-import { createRequire } from "module";
 import { AuthRequest } from "../middleware/auth.js";
 import { AttemptModel } from "../models/Attempt.js";
 import { ProfileModel } from "../models/Profile.js";
-import {
-  calculateCareerResults,
-  findTagsFromKeywords,
-} from "../utils/scoring.js";
+import { calculateCareerResults } from "../utils/scoring.js";
 import { getCareerDetail } from "../utils/careerDetails.js";
-
-const require = createRequire(import.meta.url);
-const careerMap = require("../utils/careerMap.json");
-const keywords = require("../utils/keywords.json");
+import careerMap from "../utils/careerMap.js";
+import keywords from "../utils/keywords.js";
 
 export async function suggestFromUserDetails(req: AuthRequest, res: Response) {
   try {
