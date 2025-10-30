@@ -14,25 +14,31 @@ const PORT = process.env.PORT || 4000;
 const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || "http://localhost:5173";
 
 // Allow configuring multiple frontend origins as a comma-separated list in FRONTEND_ORIGIN
+const normalize = (u: string) => u.trim().replace(/\/$/, "");
 const allowedOrigins = FRONTEND_ORIGIN.split(",")
-  .map((s) => s.trim())
+  .map((s) => normalize(s))
   .filter(Boolean);
 
 const corsOptions = {
   origin: (
     incomingOrigin: string | undefined,
-    callback: (err: Error | null, allowed?: boolean | string) => void
+    callback: (err: Error | null, allowed?: boolean | string | RegExp) => void
   ) => {
     // Allow requests with no origin (e.g., server-to-server, mobile, curl)
     if (!incomingOrigin) return callback(null, true);
-    if (allowedOrigins.includes(incomingOrigin)) return callback(null, true);
-    // If running in development and localhost present in list, allow localhost variants
+    // Exact match against configured origins
+    const normalizedIncoming = normalize(incomingOrigin);
+    if (allowedOrigins.includes(normalizedIncoming))
+      return callback(null, incomingOrigin);
+    // Allow localhost during development for convenience
     if (
       process.env.NODE_ENV !== "production" &&
-      incomingOrigin.startsWith("http://localhost")
+      normalizedIncoming.startsWith("http://localhost")
     )
-      return callback(null, true);
-    return callback(new Error("CORS origin denied"));
+      return callback(null, incomingOrigin);
+    // Deny by returning false (ensures CORS middleware doesn't throw and that no inappropriate header is sent)
+    console.warn(`CORS denied origin: ${incomingOrigin}`);
+    return callback(null, false);
   },
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
@@ -40,6 +46,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+// Ensure preflight requests are handled explicitly and receive CORS headers
+app.options("*", cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 
@@ -60,6 +68,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/career", careerRoutes);
+
+// Lightweight debug endpoint to verify allowed origins at runtime
+app.get("/api/debug/origins", (_req, res) => {
+  return res.json({
+    allowedOrigins,
+    env: process.env.NODE_ENV || "development",
+  });
+});
 
 connectDB()
   .then((m) => {
