@@ -46,8 +46,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// Ensure preflight requests are handled explicitly and receive CORS headers
-app.options("*", cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 
