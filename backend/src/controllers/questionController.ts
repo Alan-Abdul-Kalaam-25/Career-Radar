@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import type { PipelineStage } from "mongoose";
 import { QuestionModel } from "../models/Question.js";
 
 export async function getQuestions(req: Request, res: Response) {
@@ -28,8 +29,11 @@ export async function getQuestions(req: Request, res: Response) {
     const match: Record<string, unknown> = { scope: normalizedMode };
     if (field) match.careerField = field;
 
-    const pipeline: Record<string, unknown>[] = [{ $match: match }];
-    pipeline.push({ $sample: { size: limit } });
+    const matchStage: PipelineStage.Match = {
+      $match: match as PipelineStage.Match["$match"],
+    };
+    const sampleStage: PipelineStage.Sample = { $sample: { size: limit } };
+    const pipeline: PipelineStage[] = [matchStage, sampleStage];
 
     const questions = await QuestionModel.aggregate(pipeline);
     const availableFields = await QuestionModel.distinct("careerField", {
